@@ -16,15 +16,19 @@ print("\n___Python_3.9.2___\n")
 usrNReg = input("Register username:\t") #UserNameRegister
 pswdReg = stdiomask.getpass(prompt = "Register password:\t", mask = "*") #passwordRegister
 pswdConf = stdiomask.getpass(prompt = "Confirm password:\t", mask = "*") #passwordConfirm
+if len(usrNReg) < 8:
+    print("Username must contain at least 6 digits")
+    
 if len(pswdReg) < 8 or len(pswdConf) < 8:
-    print("\nPassword is to short, minimum 8 characters/digits!\n")
+    print("\nPassword must contain at least 8 digits\n")
     exit()
 
 if pswdReg != pswdConf:
-    print("\nPasswords does not mach, try again!\n")
+    print("\nPasswords does'nt mach, try again!\n")
 else:
     print("\nLOGIN\n")
     rfl = True
+    
 if rfl:
     while used < max and not usedAll and not loggedIn:
         usr = input("Username: ")
