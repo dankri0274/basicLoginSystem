@@ -11,7 +11,7 @@ pswdConf = ""
 usr = ""
 pswd = ""
 
-print("\n___Python_3.9.2___\n")
+print("\n___Python_Login___\n")
 
 usrNReg = input("Register username:\t") #UserNameRegister
 pswdReg = stdiomask.getpass(prompt = "Register password:\t", mask = "*") #passwordRegister
