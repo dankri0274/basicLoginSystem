@@ -1,5 +1,7 @@
 import stdiomask
 
+#While loop to be implemented at a later time
+
 max = 5
 used = 0
 usedAll = False #Has the user used all login attempts
@@ -11,13 +13,14 @@ pswdConf = ""
 usr = ""
 pswd = ""
 
-print("\n___Python_Login___\n")
+print("\n___Python_Basic_Login___\n")
 
 usrNReg = input("Register username:\t") #UserNameRegister
 pswdReg = stdiomask.getpass(prompt = "Register password:\t", mask = "*") #passwordRegister
 pswdConf = stdiomask.getpass(prompt = "Confirm password:\t", mask = "*") #passwordConfirm
+
 if len(usrNReg) < 8:
-    print("Username must contain at least 6 digits")
+	print("Username must contain at least 6 digits")
     
 if len(pswdReg) < 8 or len(pswdConf) < 8:
     print("\nPassword must contain at least 8 digits\n")
@@ -28,8 +31,8 @@ if pswdReg != pswdConf:
 else:
     print("\nLOGIN\n")
     rfl = True
-    
-if rfl:
+
+if rfl == True:
     while used < max and not usedAll and not loggedIn:
         usr = input("Username: ")
         pswd = stdiomask.getpass(prompt = "Password: ", mask = "*")
@@ -48,4 +51,3 @@ if loggedIn:
         print(f"Username:\t{usrNReg}\nPassword:\t{pswdReg}")
 if usedAll:
     print(f"You have used all {max} attempts")
-
