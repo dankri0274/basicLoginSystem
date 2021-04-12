@@ -1,6 +1,6 @@
 import stdiomask
 
-#While loop to be implemented at a later time
+#While loop line 13 to line 30 to be implemented at a later time
 
 max = 5
 used = 0
