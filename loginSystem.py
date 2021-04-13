@@ -1,5 +1,11 @@
-import stdiomask
+import os
 
+cmd = "pip install stdiomask"
+
+try:
+    import stdiomask
+except:
+    os.system(cmd)
 #While loop line 13 to line 30 to be implemented at a later time
 
 max = 5
