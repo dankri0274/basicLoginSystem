@@ -6,6 +6,7 @@ try:
     import stdiomask
 except:
     os.system(cmd)
+import stdiomask
     
 #While loop line 13 to line 30 to be implemented at a later time
 
