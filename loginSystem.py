@@ -6,12 +6,13 @@ try:
     import stdiomask
 except:
     os.system(cmd)
+    
 #While loop line 13 to line 30 to be implemented at a later time
 
 max = 5
 used = 0
 usedAll = False #Has the user used all login attempts
-loggedIn = False #Is the user logged inggggg
+loggedIn = False #Is the user logged in
 rfl = False #Ready For Login
 
 pswdReg = ""
@@ -33,7 +34,7 @@ if len(pswdReg) < 8 or len(pswdConf) < 8:
     exit()
 
 if pswdReg != pswdConf:
-    print("\nPasswords does'nt mach, try again!\n")
+    print("\nPasswords does 0not mach, try again!\n")
 else:
     print("\nLOGIN\n")
     rfl = True
