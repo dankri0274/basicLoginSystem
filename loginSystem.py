@@ -11,7 +11,7 @@ except:
 max = 5
 used = 0
 usedAll = False #Has the user used all login attempts
-loggedIn = False #Is the user logged in
+loggedIn = False #Is the user logged inggggg
 rfl = False #Ready For Login
 
 pswdReg = ""
@@ -27,7 +27,7 @@ pswdConf = stdiomask.getpass(prompt = "Confirm password:\t", mask = "*") #passwo
 
 if len(usrNReg) < 8:
 	print("Username must contain at least 6 digits")
-    
+
 if len(pswdReg) < 8 or len(pswdConf) < 8:
     print("\nPassword must contain at least 8 digits\n")
     exit()
