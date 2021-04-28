@@ -40,7 +40,7 @@ if len(pswdReg) < 8 or len(pswdConf) < 8:
 if pswdReg != pswdConf:
     print(colored("\nPasswords does not mach, try again!\n", "red"))
 else:
-    print("\nLOGIN\n")
+    print(colored("\nLOGIN\n", "green"))
     rfl = True
 
 if rfl == True:
