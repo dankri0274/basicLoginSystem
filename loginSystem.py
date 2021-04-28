@@ -1,12 +1,15 @@
 import os
+import sys
 
 cmd = "pip install stdiomask"
+cmd2 = "pip install termcolor"
 
 try:
     import stdiomask
+    from termcolor import colored
 except:
     os.system(cmd)
-import stdiomask
+    os.system(cmd2)
     
 #While loop line 13 to line 30 to be implemented at a later time
 
@@ -27,15 +30,15 @@ usrNReg = input("Register username:\t") #UserNameRegister
 pswdReg = stdiomask.getpass(prompt = "Register password:\t", mask = "*") #passwordRegister
 pswdConf = stdiomask.getpass(prompt = "Confirm password:\t", mask = "*") #passwordConfirm
 
-if len(usrNReg) < 8:
-	print("Username must contain at least 6 digits")
+if len(usrNReg) < 6:
+	print(colored("Username must contain at least 6 digits", "red"))
 
 if len(pswdReg) < 8 or len(pswdConf) < 8:
-    print("\nPassword must contain at least 8 digits\n")
+    print(colored("\nPassword must contain at least 8 digits\n", "red"))
     exit()
 
 if pswdReg != pswdConf:
-    print("\nPasswords does 0not mach, try again!\n")
+    print(colored("\nPasswords does not mach, try again!\n", "red"))
 else:
     print("\nLOGIN\n")
     rfl = True
@@ -48,12 +51,12 @@ if rfl == True:
         if usr == usrNReg and pswd == pswdReg:
             loggedIn = True
         else:
-            print("\nLogin credentials not correct, try again!\n")
+            print(colored("\nLogin credentials not correct, try again!\n", "red"))
         if used == max:
             usedAll = True
 
 if loggedIn:
-    print(f"\n{usrNReg}, you succesfully logged in!")
+    print(colored(f"\n{usrNReg}, you succesfully logged in!", "green"))
     ch1 = int(input("Would you like to see username and password?\n1. Yes\n2. No\n>>> "))
     if ch1 == 1:
         print(f"Username:\t{usrNReg}\nPassword:\t{pswdReg}")
