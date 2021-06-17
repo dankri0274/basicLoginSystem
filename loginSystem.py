@@ -5,11 +5,11 @@ cmd = "pip install stdiomask"
 cmd2 = "pip install termcolor"
 
 try:
-    import stdiomask
-    from termcolor import colored
+	import stdiomask
+	from termcolor import colored
 except:
-    os.system(cmd)
-    os.system(cmd2)
+	os.system(cmd)
+	os.system(cmd2)
     
 #While loop line 13 to line 30 to be implemented at a later time
 
@@ -34,31 +34,31 @@ if len(usrNReg) < 6:
 	print(colored("Username must contain at least 6 digits", "red"))
 
 if len(pswdReg) < 8 or len(pswdConf) < 8:
-    print(colored("\nPassword must contain at least 8 digits\n", "red"))
-    exit()
+	print(colored("\nPassword must contain at least 8 digits\n", "red"))
+	exit()
 
 if pswdReg != pswdConf:
-    print(colored("\nPasswords does not mach, try again!\n", "red"))
+	print(colored("\nPasswords does not mach, try again!\n", "red"))
 else:
-    print(colored("\nLOGIN\n", "green"))
-    rfl = True
+	print(colored("\nLOGIN\n", "green"))
+	rfl = True
 
 if rfl == True:
-    while used < max and not usedAll and not loggedIn:
-        usr = input("Username: ")
-        pswd = stdiomask.getpass(prompt = "Password: ", mask = "*")
-        used += 1
-        if usr == usrNReg and pswd == pswdReg:
-            loggedIn = True
-        else:
-            print(colored("\nLogin credentials not correct, try again!\n", "red"))
-        if used == max:
-            usedAll = True
+	while used < max and not usedAll and not loggedIn:
+		usr = input("Username: ")
+		pswd = stdiomask.getpass(prompt = "Password: ", mask = "*")
+		used += 1
+		if usr == usrNReg and pswd == pswdReg:
+			loggedIn = True
+		else:
+			print(colored("\nLogin credentials not correct, try again!\n", "red"))
+		if used == max:
+			usedAll = True
 
 if loggedIn:
-    print(colored(f"\n{usrNReg}, you succesfully logged in!", "green"))
-    ch1 = int(input("Would you like to see username and password?\n1. Yes\n2. No\n>>> "))
-    if ch1 == 1:
-        print(f"Username:\t{usrNReg}\nPassword:\t{pswdReg}")
+	print(colored(f"\n{usrNReg}, you succesfully logged in!", "green"))
+	ch1 = int(input("Would you like to see username and password?\n1. Yes\n2. No\n>>> "))
+	if ch1 == 1:
+		print(f"Username:\t{usrNReg}\nPassword:\t{pswdReg}")
 if usedAll:
-    print(f"You have used all {max} attempts")
+	print(f"You have used all {max} attempts")
